@@ -25,14 +25,26 @@
         <maven-compiler-plugin.verison>3.13.0</maven-compiler-plugin.verison>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+        <spring-boot.version>3.2.4</spring-boot.version>
+        <spring-cloud.version>2023.0.1</spring-cloud.version>
+        <spring-cloud-alibaba.version>2023.0.1.0</spring-cloud-alibaba.version>
+
+        <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
+        <jakarta-servlet-api.version>6.1.0</jakarta-servlet-api.version>
+        <jetbrains-annotations.version>24.1.0</jetbrains-annotations.version>
         <lombok.version>1.18.34</lombok.version>
         <mapstruct-plus.version>1.4.3</mapstruct-plus.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
+
+        <hutool.version>5.8.29</hutool.version>
+        <mendmix.version>1.4.3</mendmix.version>
+        <easyexcel.version>4.0.1</easyexcel.version>
+        <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
     </properties>
 
     <dependencyManagement>
-        <!--项目自身依赖-->
         <dependencies>
+            <!--项目自身依赖-->
             <dependency>
                 <groupId>org.dromara</groupId>
                 <artifactId>aimer-api</artifactId>
@@ -62,6 +74,87 @@
                 <groupId>org.dromara</groupId>
                 <artifactId>aimer-console</artifactId>
                 <version>${revision}</version>
+            </dependency>
+
+            <!--api类-->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${javax-servlet-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>${jakarta-servlet-api.version}</version>
+            </dependency>
+
+            <!-- 工具类 -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mendmix</groupId>
+                <artifactId>mendmix-common</artifactId>
+                <version>${mendmix.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.linpeilie</groupId>
+                <artifactId>mapstruct-plus</artifactId>
+                <version>${mapstruct-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+
+            <!--编译注解类-->
+            <dependency>
+                <groupId>org.jetbrains</groupId>
+                <artifactId>annotations</artifactId>
+                <version>${jetbrains-annotations.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!--starter类-->
+            <dependency>
+                <groupId>io.github.linpeilie</groupId>
+                <artifactId>mapstruct-plus-spring-boot-starter</artifactId>
+                <version>${mapstruct-plus.version}</version>
+            </dependency>
+
+            <!--统一依赖管理-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

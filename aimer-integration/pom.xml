@@ -10,4 +10,16 @@
     </parent>
 
     <artifactId>aimer-integration</artifactId>
+
+    <dependencies>
+        <!--项目自身依赖-->
+        <dependency>
+            <groupId>org.dromara</groupId>
+            <artifactId>aimer-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.dromara</groupId>
+            <artifactId>aimer-common</artifactId>
+        </dependency>
+    </dependencies>
 </project>
