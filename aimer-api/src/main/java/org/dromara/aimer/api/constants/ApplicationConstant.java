@@ -1,4 +1,4 @@
-package org.dromara.aimer.common.constants;
+package org.dromara.aimer.api.constants;
 
 /**
  * @author bixiu

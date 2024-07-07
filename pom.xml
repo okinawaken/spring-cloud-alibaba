@@ -8,6 +8,13 @@
     <version>${revision}</version>
     <packaging>pom</packaging>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.4</version>
+        <relativePath/>
+    </parent>
+
     <modules>
         <module>aimer-api</module>
         <module>aimer-common</module>
@@ -40,6 +47,11 @@
         <mendmix.version>1.4.3</mendmix.version>
         <easyexcel.version>4.0.1</easyexcel.version>
         <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
+        <tlog.version>1.5.2</tlog.version>
+        <mybatis-plus.version>3.5.7</mybatis-plus.version>
+        <mysql-connector.version>8.0.33</mysql-connector.version>
+        <dynamic-datasource.version>4.3.1</dynamic-datasource.version>
+        <retrofit.version>3.1.1</retrofit.version>
     </properties>
 
     <dependencyManagement>
@@ -105,14 +117,19 @@
                 <version>${easyexcel.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.github.linpeilie</groupId>
-                <artifactId>mapstruct-plus</artifactId>
-                <version>${mapstruct-plus.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.hibernate.validator</groupId>
                 <artifactId>hibernate-validator</artifactId>
                 <version>${hibernate-validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.linpeilie</groupId>
+                <artifactId>mapstruct-plus</artifactId>
+                <version>${mapstruct-plus.version}</version>
             </dependency>
 
             <!--编译注解类-->
@@ -127,11 +144,33 @@
                 <version>${lombok.version}</version>
             </dependency>
 
+            <!--数据库驱动类-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector.version}</version>
+            </dependency>
+
             <!--starter类-->
             <dependency>
                 <groupId>io.github.linpeilie</groupId>
                 <artifactId>mapstruct-plus-spring-boot-starter</artifactId>
                 <version>${mapstruct-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
+                <version>${dynamic-datasource.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.lianjiatech</groupId>
+                <artifactId>retrofit-spring-boot-starter</artifactId>
+                <version>${retrofit.version}</version>
             </dependency>
 
             <!--统一依赖管理-->
