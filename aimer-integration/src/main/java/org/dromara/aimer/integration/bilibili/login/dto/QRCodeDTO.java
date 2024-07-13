@@ -1,0 +1,14 @@
+package org.dromara.aimer.integration.bilibili.login.dto;
+
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import lombok.Data;
+
+@Data
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
+public class QRCodeDTO {
+
+    private String url;
+
+    private String qrcodeKey;
+}
