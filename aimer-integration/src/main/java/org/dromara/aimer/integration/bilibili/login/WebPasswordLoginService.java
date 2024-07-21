@@ -1,0 +1,32 @@
+package org.dromara.aimer.integration.bilibili.login;
+
+
+import com.github.lianjiatech.retrofit.spring.boot.core.RetrofitClient;
+import org.dromara.aimer.common.response.BaseResponse;
+import org.dromara.aimer.integration.bilibili.login.request.PasswordLoginRequest;
+import org.dromara.aimer.integration.bilibili.login.response.PasswordLoginResult;
+import org.dromara.aimer.integration.bilibili.login.response.WebKeyResult;
+import org.dromara.aimer.integration.constants.ApiUrlConstant;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
+
+/**
+ * web端账号密码登录
+ */
+@RetrofitClient(baseUrl = ApiUrlConstant.PASSPORT_URL)
+public interface WebPasswordLoginService {
+
+    /**
+     * 获取公钥&盐(web端)
+     */
+    @GET("x/passport-login/web/key")
+    BaseResponse<WebKeyResult> getWebKey();
+
+    /**
+     * 登录操作(web端)
+     */
+    @FormUrlEncoded
+    @POST("x/passport-login/web/login")
+    BaseResponse<PasswordLoginResult> passwordLogin(PasswordLoginRequest request);
+}

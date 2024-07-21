@@ -16,7 +16,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
-@RetrofitClient(baseUrl = ApiUrlConstant.TICKET_URL + "/api/ticket")
+@RetrofitClient(baseUrl = ApiUrlConstant.SHOW_URL + "/api/ticket")
 public interface TicketService {
 
     /**

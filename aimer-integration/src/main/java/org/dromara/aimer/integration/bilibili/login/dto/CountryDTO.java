@@ -6,15 +6,20 @@ import lombok.Data;
 
 @Data
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class LoginResultDTO {
+public class CountryDTO {
 
-    private String url;
+    /**
+     * 国际代码值
+     */
+    private Integer id;
 
-    private String refreshToken;
+    /**
+     * 国家&地区名
+     */
+    private String cname;
 
-    private Long timestamp;
-
-    private Integer code;
-
-    private String message;
+    /**
+     * 国家&地区区号
+     */
+    private String countryId;
 }
