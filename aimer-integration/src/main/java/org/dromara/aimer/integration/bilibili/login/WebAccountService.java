@@ -6,24 +6,24 @@ import com.github.lianjiatech.retrofit.spring.boot.interceptor.Intercepts;
 import org.dromara.aimer.common.response.BaseResponse;
 import org.dromara.aimer.integration.bilibili.interceptor.AddCookiesInterceptor;
 import org.dromara.aimer.integration.bilibili.interceptor.ReceivedCookiesInterceptor;
-import org.dromara.aimer.integration.bilibili.login.response.CaptchaResult;
+import org.dromara.aimer.integration.bilibili.login.response.AccountInfoResult;
 import org.dromara.aimer.integration.constants.ApiUrlConstant;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 /**
- * web验证码服务
+ * web账号服务
  */
 @Intercepts(value = {
         @Intercept(handler = AddCookiesInterceptor.class),
         @Intercept(handler = ReceivedCookiesInterceptor.class)
 })
-@RetrofitClient(baseUrl = ApiUrlConstant.PASSPORT_URL)
-public interface WebCaptchaService {
+@RetrofitClient(baseUrl = ApiUrlConstant.API_URL)
+public interface WebAccountService {
 
     /**
-     * 申请captcha验证码
+     * 获取我的信息
      */
-    @GET("x/passport-login/captcha")
-    BaseResponse<CaptchaResult> requestCaptcha(@Query(value = "source") String source);
+    @GET("x/member/web/account")
+    BaseResponse<AccountInfoResult> getAccountInfo(@Query(value = "access_key") String accessKey);
 }
