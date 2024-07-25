@@ -49,25 +49,31 @@ public class AccountInfoDO extends BaseDO {
     private String email;
 
     /**
+     * 用户手机号
+     */
+    @TableField("phone")
+    private String phone;
+
+    /**
      * 用户cookie信息
      */
     @TableField("cookie")
     private String cookie;
 
     /**
-     * 用户性别：0、未知 1、男 2、女
+     * 用户性别：枚举值参考SexEnum
      */
     @TableField("sex")
     private Integer sex;
 
     /**
-     * 登录方式：0、账号密码登录 1、邮件登录 2、cookie登录
+     * 登录方式：枚举值参考LoginTypeEnum
      */
     @TableField("login_type")
     private Integer loginType;
 
     /**
-     * 第三方平台类型：0、哔哩哔哩
+     * 第三方平台类型：枚举值参考PlatFormTypeEnum
      */
     @TableField("platform")
     private Integer platform;

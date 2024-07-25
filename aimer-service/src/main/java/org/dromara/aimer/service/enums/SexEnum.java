@@ -5,17 +5,13 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum LoginTypeEnum {
+public enum SexEnum {
 
-    PASSWORD(0, "账号密码登录"),
+    UN_KNOWN(0, "未知"),
 
-    EMAIL(1, "邮件登录"),
+    MALE(1, "男性"),
 
-    SMS(2, "短信登录"),
-
-    QR(3, "扫码登录"),
-
-    COOKIE(4, "Cookie登录"),
+    FEMALE(2, "女性"),
 
     ;
 

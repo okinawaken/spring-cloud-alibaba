@@ -5,17 +5,9 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum LoginTypeEnum {
+public enum PlatFormTypeEnum {
 
-    PASSWORD(0, "账号密码登录"),
-
-    EMAIL(1, "邮件登录"),
-
-    SMS(2, "短信登录"),
-
-    QR(3, "扫码登录"),
-
-    COOKIE(4, "Cookie登录"),
+    BILIBILI(0, "哔哩哔哩"),
 
     ;
 
