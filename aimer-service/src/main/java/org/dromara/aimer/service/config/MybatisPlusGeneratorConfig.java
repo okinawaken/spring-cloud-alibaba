@@ -13,10 +13,10 @@ import org.apache.ibatis.type.JdbcType;
 import org.dromara.aimer.repository.base.BaseDO;
 import org.dromara.aimer.repository.base.BaseMapperPlus;
 import org.dromara.aimer.repository.base.BaseServicePlus;
-import org.dromara.aimer.service.dto.DataSourceConfigDTO;
-import org.dromara.aimer.service.dto.GlobalConfigDTO;
-import org.dromara.aimer.service.dto.PackageConfigDTO;
-import org.dromara.aimer.service.dto.StrategyConfigDTO;
+import org.dromara.aimer.service.config.dto.DataSourceConfigDTO;
+import org.dromara.aimer.service.config.dto.GlobalConfigDTO;
+import org.dromara.aimer.service.config.dto.PackageConfigDTO;
+import org.dromara.aimer.service.config.dto.StrategyConfigDTO;
 import org.dromara.aimer.service.enums.NacosDataIdEnum;
 import org.springframework.stereotype.Component;
 
