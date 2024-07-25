@@ -4,9 +4,11 @@ import org.dromara.aimer.common.response.BaseResponse;
 import org.dromara.aimer.service.utils.MybatisPlusGeneratorUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("/mybatis")
+@RestController
+@RequestMapping("/mybatis")
 public class MybatisController {
 
     @Autowired
