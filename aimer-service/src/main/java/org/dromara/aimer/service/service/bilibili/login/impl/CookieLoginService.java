@@ -7,7 +7,7 @@ import org.dromara.aimer.service.service.bilibili.login.ILoginService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PasswordLoginService implements ILoginService {
+public class CookieLoginService implements ILoginService {
     @Override
     public LoginResultDTO login(LoginInfoDTO loginInfoDTO) {
         return null;
@@ -15,6 +15,6 @@ public class PasswordLoginService implements ILoginService {
 
     @Override
     public LoginTypeEnum supportedLoginType() {
-        return LoginTypeEnum.PASSWORD;
+        return LoginTypeEnum.COOKIE;
     }
 }

@@ -14,6 +14,8 @@ public class LoginInfoDTO {
 
     private String verificationCode;
 
+    private String qrCode;
+
     private String cookie;
 
     private LoginTypeEnum loginType;
