@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController("/echo")
 public class EchoController {
-    @RequestMapping(value = "/echo/{string}", method = RequestMethod.GET)
-    public String echo(@PathVariable String string) {
-        return string;
+    @RequestMapping(value = "/{str}", method = RequestMethod.GET)
+    public String echo(@PathVariable String str) {
+        return str;
     }
 }

@@ -2,7 +2,7 @@ drop table if exists `account_info`;
 show create table `account_info`;
 create table `account_info`
 (
-    `id`          int(11) unsigned    not null auto_increment comment '主键ID',
+    `id`          bigint(20) unsigned not null auto_increment comment '主键ID',
     `biz_id`      varchar(64)         not null default '' comment '第三方平台用户ID',
     `username`    varchar(64)         not null default '' comment '用户名',
     `password`    varchar(64)         not null default '' comment '用户密码',
