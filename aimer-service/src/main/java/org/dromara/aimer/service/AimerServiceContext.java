@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @ComponentScan
-@RetrofitScan
+@RetrofitScan(basePackageClasses = {AimerServiceContext.class})
 @Import({AimerRepositoryContext.class, AimerIntegrationContext.class})
 public class AimerServiceContext {
 }
