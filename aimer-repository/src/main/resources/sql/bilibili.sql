@@ -1,3 +1,4 @@
+drop table if exists `account_info`;
 create table `account_info`
 (
     `id`          int(11) unsigned not null auto_increment comment '主键ID',
