@@ -1,5 +1,4 @@
-package org.dromara.aimer.service.service.bilibili;
-
+package org.dromara.aimer.service.service.bilibili.sdk;
 
 import com.github.lianjiatech.retrofit.spring.boot.core.RetrofitClient;
 import com.github.lianjiatech.retrofit.spring.boot.interceptor.Intercept;
@@ -7,34 +6,31 @@ import com.github.lianjiatech.retrofit.spring.boot.interceptor.Intercepts;
 import org.dromara.aimer.common.response.BaseResponse;
 import org.dromara.aimer.service.service.bilibili.interceptor.AddCookiesInterceptor;
 import org.dromara.aimer.service.service.bilibili.interceptor.ReceivedCookiesInterceptor;
-import org.dromara.aimer.service.service.bilibili.request.PasswordLoginRequest;
-import org.dromara.aimer.service.service.bilibili.response.PasswordLoginResult;
-import org.dromara.aimer.service.service.bilibili.response.WebKeyResult;
+import org.dromara.aimer.service.service.bilibili.response.GenerateQrCodeResult;
+import org.dromara.aimer.service.service.bilibili.response.QrCodePollResult;
 import org.dromara.aimer.service.service.bilibili.constants.ApiUrlConstant;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 /**
- * web端账号密码登录
+ * web端二维码登录
  */
 @Intercepts(value = {
         @Intercept(handler = AddCookiesInterceptor.class),
         @Intercept(handler = ReceivedCookiesInterceptor.class)
 })
 @RetrofitClient(baseUrl = ApiUrlConstant.PASSPORT_URL)
-public interface WebPasswordLoginService {
+public interface WebQrLoginService {
 
     /**
-     * 获取公钥&盐(web端)
+     * 申请二维码(web端)
      */
-    @GET("x/passport-login/web/key")
-    BaseResponse<WebKeyResult> getWebKey();
+    @GET("x/passport-login/web/qrcode/generate")
+    BaseResponse<GenerateQrCodeResult> generateQRCode();
 
     /**
-     * 登录操作(web端)
+     * 扫码登录(web端)
      */
-    @FormUrlEncoded
-    @POST("x/passport-login/web/login")
-    BaseResponse<PasswordLoginResult> passwordLogin(PasswordLoginRequest request);
+    @GET("x/passport-login/web/qrcode/poll")
+    BaseResponse<QrCodePollResult> pollQRCode(@Query(value = "qrcode_key") String qrcodeKey);
 }

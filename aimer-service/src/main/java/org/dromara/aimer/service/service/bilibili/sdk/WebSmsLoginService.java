@@ -1,4 +1,4 @@
-package org.dromara.aimer.service.service.bilibili;
+package org.dromara.aimer.service.service.bilibili.sdk;
 
 import com.github.lianjiatech.retrofit.spring.boot.core.RetrofitClient;
 import com.github.lianjiatech.retrofit.spring.boot.interceptor.Intercept;
