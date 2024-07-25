@@ -4,10 +4,10 @@ import com.github.lianjiatech.retrofit.spring.boot.core.RetrofitClient;
 import com.github.lianjiatech.retrofit.spring.boot.interceptor.Intercept;
 import com.github.lianjiatech.retrofit.spring.boot.interceptor.Intercepts;
 import org.dromara.aimer.common.response.BaseResponse;
-import org.dromara.aimer.service.service.bilibili.interceptor.AddCookiesInterceptor;
-import org.dromara.aimer.service.service.bilibili.interceptor.ReceivedCookiesInterceptor;
-import org.dromara.aimer.service.service.bilibili.response.ListCountryResult;
-import org.dromara.aimer.service.service.bilibili.constants.ApiUrlConstant;
+import org.dromara.aimer.service.service.bilibili.sdk.interceptor.AddCookiesInterceptor;
+import org.dromara.aimer.service.service.bilibili.sdk.interceptor.ReceivedCookiesInterceptor;
+import org.dromara.aimer.service.service.bilibili.sdk.response.ListCountryResult;
+import org.dromara.aimer.service.service.bilibili.sdk.constants.ApiUrlConstant;
 import retrofit2.http.GET;
 
 /**

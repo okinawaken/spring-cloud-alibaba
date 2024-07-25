@@ -14,8 +14,9 @@ public class BilibiliController {
     @Autowired
     private BilibiliService bilibiliService;
 
-    @GetMapping(value = "test")
+    @GetMapping(value = "/test")
     public BaseResponse<Void> test() {
+        bilibiliService.login(null);
         return BaseResponse.ok();
     }
 }
