@@ -55,6 +55,7 @@
         <zxing.version>3.5.3</zxing.version>
         <velocity.version>2.3</velocity.version>
         <caffeine.version>3.1.8</caffeine.version>
+        <webp-imageio.version>0.1.6</webp-imageio.version>
     </properties>
 
     <dependencyManagement>
@@ -148,6 +149,11 @@
                 <groupId>com.github.ben-manes.caffeine</groupId>
                 <artifactId>caffeine</artifactId>
                 <version>${caffeine.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.sejda.imageio</groupId>
+                <artifactId>webp-imageio</artifactId>
+                <version>${webp-imageio.version}</version>
             </dependency>
 
             <!--编译注解类-->
